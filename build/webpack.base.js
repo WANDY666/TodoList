@@ -1,5 +1,5 @@
 // 使用node的path模块
-const path  = require('path')
+const path = require('path')
 
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
@@ -42,10 +42,10 @@ module.exports = {
             test: /\.m?js$/,
             exclude: /node_modules/,
             use: {
-              loader: "babel-loader",
-              options: {
-                presets: ['@babel/preset-env']
-              }
+                loader: "babel-loader",
+                options: {
+                    presets: ['@babel/preset-env']
+                }
             }
         }]
     },
@@ -61,7 +61,10 @@ module.exports = {
 
     resolve: {
         alias: {
-            'vue': 'vue/dist/vue.js'
+            'vue': 'vue/dist/vue.js',
+            '@': path.resolve(__dirname, '../src'),
+            'styles': path.resolve(__dirname, '../src/assets/styles'),
+            'images': path.resolve(__dirname, '../src/assets/images')
         }
     },
 }
